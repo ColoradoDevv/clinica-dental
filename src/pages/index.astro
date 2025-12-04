@@ -1,16 +1,35 @@
 ---
-
+import "../styles/global.css";
+import Navbar from "../components/Navbar.jsx";
+import Hero from "../components/Hero.jsx";
+import Services from "../components/Services.jsx";
+import Team from "../components/Team.jsx";
+import Testimonials from "../components/Testimonials.jsx";
+import Footer from "../components/Footer.jsx";
 ---
 
-<html lang="en">
+<html lang="es">
 	<head>
 		<meta charset="utf-8" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="viewport" content="width=device-width" />
 		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
+		<title>
+			Clínica Dental VitalDent - Sonrisas que inspiran confianza
+		</title>
+		<meta
+			name="description"
+			content="Clínica Dental VitalDent. Ortodoncia invisible, implantes y estética dental con un trato cercano y tecnología moderna."
+		/>
 	</head>
 	<body>
-		<h1>Astro</h1>
+		<Navbar client:load />
+		<main>
+			<Hero client:load />
+			<Services client:visible />
+			<Team client:visible />
+			<Testimonials client:visible />
+		</main>
+		<Footer />
 	</body>
 </html>
