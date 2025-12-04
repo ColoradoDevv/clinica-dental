@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
+import { Smile } from 'lucide-react';
 
 const Navbar = () => {
     const [isScrolled, setIsScrolled] = useState(false);
@@ -41,19 +42,10 @@ const Navbar = () => {
         >
             <div className="container" style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
                 <a href="#" style={{ fontSize: '1.5rem', fontWeight: '700', color: 'var(--color-primary)', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-                    <span style={{ fontSize: '1.8rem' }}>🦷</span> VitalDent
+                    <Smile size={32} strokeWidth={2} /> VitalDent
                 </a>
 
-                {/* Desktop Menu */}
-                <div className="hidden md:flex" style={{ display: 'none', gap: '2rem', alignItems: 'center' }}>
-                    {/* We will use a media query in CSS or inline styles for responsiveness. For now, let's use inline styles with a simple check or just standard flex for desktop. 
-              Since I'm not using Tailwind, I need to be careful with "hidden md:flex". 
-              I'll implement a simple responsive logic or just standard CSS classes in a separate module or style block.
-              For simplicity in this file, I'll use inline styles and a media query in global css or a style tag.
-           */}
-                </div>
-
-                {/* Desktop Nav Links (Visible on larger screens) */}
+                {/* Desktop Nav Links */}
                 <div className="desktop-nav" style={{ display: 'flex', gap: '2rem', alignItems: 'center' }}>
                     {navLinks.map((link) => (
                         <a
@@ -73,12 +65,7 @@ const Navbar = () => {
                         Pedir Cita
                     </a>
                 </div>
-
-                {/* Mobile Menu Button (Visible on small screens) */}
-                {/* I will add a media query to hide desktop-nav and show mobile toggle later in global css or here */}
             </div>
-
-            {/* Mobile Menu Overlay would go here */}
         </motion.nav>
     );
 };

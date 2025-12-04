@@ -1,4 +1,5 @@
 import React from 'react';
+import { MapPin, Phone, Mail } from 'lucide-react';
 
 const Footer = () => {
     return (
@@ -16,9 +17,15 @@ const Footer = () => {
                     <div>
                         <h4 style={{ fontSize: '1.25rem', marginBottom: '1.5rem', fontWeight: '600' }}>Contacto</h4>
                         <ul style={{ listStyle: 'none', color: '#94a3b8' }}>
-                            <li style={{ marginBottom: '0.5rem' }}>📍 Calle Principal 123, Ciudad</li>
-                            <li style={{ marginBottom: '0.5rem' }}>📞 +34 912 345 678</li>
-                            <li style={{ marginBottom: '0.5rem' }}>📧 info@vitaldent.com</li>
+                            <li style={{ marginBottom: '0.5rem', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+                                <MapPin size={18} /> Calle Principal 123, Ciudad
+                            </li>
+                            <li style={{ marginBottom: '0.5rem', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+                                <Phone size={18} /> +34 912 345 678
+                            </li>
+                            <li style={{ marginBottom: '0.5rem', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+                                <Mail size={18} /> info@vitaldent.com
+                            </li>
                         </ul>
                     </div>
 

@@ -1,30 +1,31 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import { Smile, Anchor, Sparkles, Heart } from 'lucide-react';
 
 const Services = () => {
     const services = [
         {
             title: 'Ortodoncia Invisible',
             description: 'Alinea tu sonrisa de forma discreta y cómoda. Nadie notará que llevas ortodoncia.',
-            icon: '✨',
+            icon: <Smile size={48} strokeWidth={1.5} />,
             color: '#E0F2FE'
         },
         {
             title: 'Implantes Dentales',
             description: 'Recupera la funcionalidad y estética de tu boca con soluciones duraderas y naturales.',
-            icon: '🦷',
+            icon: <Anchor size={48} strokeWidth={1.5} />,
             color: '#F0FDF4'
         },
         {
             title: 'Estética Dental',
             description: 'Blanqueamientos y carillas para que luzcas tu mejor sonrisa.',
-            icon: '💎',
+            icon: <Sparkles size={48} strokeWidth={1.5} />,
             color: '#FFF7ED'
         },
         {
             title: 'Odontopediatría',
             description: 'Cuidamos la salud dental de los más pequeños con paciencia y cariño.',
-            icon: '🧸',
+            icon: <Heart size={48} strokeWidth={1.5} />,
             color: '#FEF2F2'
         }
     ];
@@ -63,7 +64,7 @@ const Services = () => {
                             }}
                             whileHover={{ y: -5 }}
                         >
-                            <div style={{ fontSize: '3rem', marginBottom: '1rem' }}>{service.icon}</div>
+                            <div style={{ marginBottom: '1rem', color: 'var(--color-primary)' }}>{service.icon}</div>
                             <h3 style={{ fontSize: '1.5rem', marginBottom: '1rem', color: 'var(--color-text)' }}>{service.title}</h3>
                             <p style={{ color: 'var(--color-accent)' }}>{service.description}</p>
                         </motion.div>

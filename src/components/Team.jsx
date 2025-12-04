@@ -27,10 +27,7 @@ const Team = () => {
                                 style={{ width: '100%', height: '100%', objectFit: 'cover' }}
                                 onError={(e) => {
                                     e.target.style.display = 'none';
-                                    e.target.parentElement.style.display = 'flex';
-                                    e.target.parentElement.style.alignItems = 'center';
-                                    e.target.parentElement.style.justifyContent = 'center';
-                                    e.target.parentElement.innerHTML = '<span style="font-size: 4rem;">👩‍⚕️</span>';
+                                    e.target.parentElement.style.backgroundColor = '#e2e8f0';
                                 }}
                             />
                         </div>
