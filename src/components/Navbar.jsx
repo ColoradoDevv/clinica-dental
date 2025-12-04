@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Smile } from 'lucide-react';
+import { Smile, Menu, X } from 'lucide-react';
 
 const Navbar = () => {
     const [isScrolled, setIsScrolled] = useState(false);
@@ -28,44 +28,72 @@ const Navbar = () => {
             transition={{ duration: 0.5 }}
             className={`fixed w-full z-50 transition-all duration-300 ${isScrolled ? 'bg-white/90 backdrop-blur-md shadow-sm py-4' : 'bg-transparent py-6'
                 }`}
-            style={{
-                backgroundColor: isScrolled ? 'rgba(255, 255, 255, 0.9)' : 'transparent',
-                boxShadow: isScrolled ? 'var(--shadow-sm)' : 'none',
-                padding: isScrolled ? '1rem 0' : '1.5rem 0',
-                position: 'fixed',
-                top: 0,
-                left: 0,
-                right: 0,
-                zIndex: 1000,
-                transition: 'all 0.3s ease'
-            }}
         >
-            <div className="container" style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
-                <a href="#" style={{ fontSize: '1.5rem', fontWeight: '700', color: 'var(--color-primary)', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-                    <Smile size={32} strokeWidth={2} /> VitalDent
+            <div className="container mx-auto px-4 flex items-center justify-between">
+                <a href="#" className="text-2xl font-bold text-slate-800 flex items-center gap-2">
+                    <Smile size={32} className="text-blue-500" strokeWidth={2} />
+                    <span className="text-slate-700">VitalDent</span>
                 </a>
 
                 {/* Desktop Nav Links */}
-                <div className="desktop-nav" style={{ display: 'flex', gap: '2rem', alignItems: 'center' }}>
+                <div className="hidden md:flex items-center gap-8">
                     {navLinks.map((link) => (
                         <a
                             key={link.name}
                             href={link.href}
-                            style={{ fontWeight: '500', color: 'var(--color-text)', fontSize: '1rem' }}
-                            className="hover:text-primary"
+                            className="font-medium text-slate-600 hover:text-blue-500 transition-colors"
                         >
                             {link.name}
                         </a>
                     ))}
                     <a
                         href="#contacto"
-                        className="btn btn-primary"
-                        style={{ textDecoration: 'none' }}
+                        className="bg-blue-500 text-white px-6 py-2 rounded-full font-semibold hover:bg-blue-600 transition-colors shadow-lg shadow-blue-500/30"
                     >
                         Pedir Cita
                     </a>
                 </div>
+
+                {/* Mobile Menu Button */}
+                <button
+                    className="md:hidden text-slate-700 p-2"
+                    onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+                >
+                    {isMobileMenuOpen ? <X size={28} /> : <Menu size={28} />}
+                </button>
             </div>
+
+            {/* Mobile Menu Overlay */}
+            <AnimatePresence>
+                {isMobileMenuOpen && (
+                    <motion.div
+                        initial={{ opacity: 0, height: 0 }}
+                        animate={{ opacity: 1, height: 'auto' }}
+                        exit={{ opacity: 0, height: 0 }}
+                        className="md:hidden bg-white border-t border-slate-100 overflow-hidden"
+                    >
+                        <div className="container mx-auto px-4 py-4 flex flex-col gap-4">
+                            {navLinks.map((link) => (
+                                <a
+                                    key={link.name}
+                                    href={link.href}
+                                    className="font-medium text-slate-600 hover:text-blue-500 py-2 block"
+                                    onClick={() => setIsMobileMenuOpen(false)}
+                                >
+                                    {link.name}
+                                </a>
+                            ))}
+                            <a
+                                href="#contacto"
+                                className="bg-blue-500 text-white px-6 py-3 rounded-xl font-semibold text-center hover:bg-blue-600 transition-colors shadow-lg shadow-blue-500/30"
+                                onClick={() => setIsMobileMenuOpen(false)}
+                            >
+                                Pedir Cita
+                            </a>
+                        </div>
+                    </motion.div>
+                )}
+            </AnimatePresence>
         </motion.nav>
     );
 };

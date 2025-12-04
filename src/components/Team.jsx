@@ -1,5 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import draElenaImg from '../assets/images/dra-elena.png';
 
 const Team = () => {
     return (
@@ -22,13 +23,9 @@ const Team = () => {
                             position: 'relative'
                         }}>
                             <img
-                                src="/assets/images/dra-elena.png"
+                                src={draElenaImg.src}
                                 alt="Dra. Elena"
                                 style={{ width: '100%', height: '100%', objectFit: 'cover' }}
-                                onError={(e) => {
-                                    e.target.style.display = 'none';
-                                    e.target.parentElement.style.backgroundColor = '#e2e8f0';
-                                }}
                             />
                         </div>
                     </motion.div>
