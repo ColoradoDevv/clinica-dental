@@ -1,143 +1,120 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Smile, Anchor, Sparkles, Heart, ArrowRight } from 'lucide-react';
+import { Smile, Anchor, Sparkles, Heart, Users, Baby } from 'lucide-react';
 
 const Services = () => {
     const services = [
         {
-            title: 'Ortodoncia Invisible',
-            description: 'Alinea tu sonrisa de forma discreta y cómoda. Nadie notará que llevas ortodoncia.',
+            title: 'Ortodoncia',
+            description: 'Invisalign y brackets para alinear tu sonrisa de forma cómoda.',
             icon: Smile,
-            gradient: 'from-cyan-400 to-blue-500',
-            bgColor: 'bg-cyan-50',
-            iconBg: 'bg-cyan-100',
+            color: 'bg-cyan-50 hover:bg-cyan-100',
             iconColor: 'text-cyan-600'
         },
         {
-            title: 'Implantes Dentales',
-            description: 'Recupera la funcionalidad y estética de tu boca con soluciones duraderas y naturales.',
+            title: 'Implantes',
+            description: 'Recupera piezas perdidas con resultados naturales y duraderos.',
             icon: Anchor,
-            gradient: 'from-emerald-400 to-teal-500',
-            bgColor: 'bg-emerald-50',
-            iconBg: 'bg-emerald-100',
+            color: 'bg-emerald-50 hover:bg-emerald-100',
             iconColor: 'text-emerald-600'
         },
         {
-            title: 'Estética Dental',
-            description: 'Blanqueamientos y carillas para que luzcas tu mejor sonrisa.',
+            title: 'Estética',
+            description: 'Blanqueamientos y carillas para una sonrisa radiante.',
             icon: Sparkles,
-            gradient: 'from-amber-400 to-orange-500',
-            bgColor: 'bg-amber-50',
-            iconBg: 'bg-amber-100',
+            color: 'bg-amber-50 hover:bg-amber-100',
             iconColor: 'text-amber-600'
         },
         {
             title: 'Odontopediatría',
-            description: 'Cuidamos la salud dental de los más pequeños con paciencia y cariño.',
+            description: 'Cuidamos los dientes de los más pequeños con cariño.',
+            icon: Baby,
+            color: 'bg-rose-50 hover:bg-rose-100',
+            iconColor: 'text-rose-500'
+        },
+        {
+            title: 'Familia',
+            description: 'Tratamientos para toda la familia en un solo lugar.',
+            icon: Users,
+            color: 'bg-violet-50 hover:bg-violet-100',
+            iconColor: 'text-violet-600'
+        },
+        {
+            title: 'Urgencias',
+            description: 'Atención inmediata cuando más lo necesitas.',
             icon: Heart,
-            gradient: 'from-rose-400 to-pink-500',
-            bgColor: 'bg-rose-50',
-            iconBg: 'bg-rose-100',
-            iconColor: 'text-rose-600'
+            color: 'bg-red-50 hover:bg-red-100',
+            iconColor: 'text-red-500'
         }
     ];
 
-    const containerVariants = {
-        hidden: { opacity: 0 },
-        visible: {
-            opacity: 1,
-            transition: {
-                staggerChildren: 0.15
-            }
-        }
-    };
-
-    const cardVariants = {
-        hidden: { opacity: 0, y: 40 },
-        visible: {
-            opacity: 1,
-            y: 0,
-            transition: {
-                duration: 0.6,
-                ease: "easeOut"
-            }
-        }
-    };
-
     return (
-        <section id="tratamientos" className="py-24 bg-gradient-to-b from-white via-slate-50/50 to-white relative overflow-hidden">
-            {/* Background Decorations */}
-            <div className="absolute top-0 left-0 w-96 h-96 bg-cyan-100 rounded-full blur-3xl opacity-30 -translate-x-1/2 -translate-y-1/2"></div>
-            <div className="absolute bottom-0 right-0 w-96 h-96 bg-blue-100 rounded-full blur-3xl opacity-30 translate-x-1/2 translate-y-1/2"></div>
-
-            <div className="max-w-7xl mx-auto px-6 relative z-10">
+        <section id="tratamientos" className="py-20 bg-white">
+            <div className="max-w-7xl mx-auto px-6">
                 <motion.div
-                    initial={{ opacity: 0, y: 30 }}
+                    initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.7 }}
+                    transition={{ duration: 0.5 }}
                     viewport={{ once: true }}
-                    className="text-center mb-16"
+                    className="text-center mb-12"
                 >
-                    <motion.span
-                        className="inline-block px-4 py-1.5 bg-cyan-100 text-cyan-700 text-sm font-medium rounded-full mb-4"
-                        initial={{ opacity: 0, scale: 0.8 }}
-                        whileInView={{ opacity: 1, scale: 1 }}
-                        transition={{ delay: 0.2, duration: 0.5 }}
-                        viewport={{ once: true }}
-                    >
-                        Nuestros Servicios
-                    </motion.span>
-                    <h2 className="text-4xl md:text-5xl font-bold text-slate-800 mb-6">
-                        Tratamientos que transforman <br className="hidden md:block" />
-                        <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-500 to-blue-600">sonrisas</span>
+                    <h2 className="text-3xl md:text-4xl font-bold text-slate-800 mb-4">
+                        ¿Cómo podemos ayudarte?
                     </h2>
-                    <p className="text-lg text-slate-500 max-w-2xl mx-auto">
-                        Soluciones personalizadas combinando la última tecnología con un trato humano y cercano.
+                    <p className="text-slate-500 max-w-xl mx-auto">
+                        Elige el servicio que necesitas y agenda tu cita hoy mismo.
                     </p>
                 </motion.div>
 
-                <motion.div
-                    className="grid md:grid-cols-2 lg:grid-cols-4 gap-6"
-                    variants={containerVariants}
-                    initial="hidden"
-                    whileInView="visible"
-                    viewport={{ once: true }}
-                >
+                <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
                     {services.map((service, index) => {
-                        const IconComponent = service.icon;
+                        const Icon = service.icon;
+                        const waLink = `https://wa.me/1234567890?text=Hola,%20me%20interesa%20el%20servicio%20de%20${encodeURIComponent(service.title)}`;
                         return (
-                            <motion.div
+                            <motion.a
                                 key={index}
-                                variants={cardVariants}
-                                className={`group relative ${service.bgColor} rounded-3xl p-8 cursor-pointer overflow-hidden`}
-                                whileHover={{ y: -8, scale: 1.02 }}
-                                transition={{ duration: 0.3 }}
+                                href={waLink}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                initial={{ opacity: 0, y: 20 }}
+                                whileInView={{ opacity: 1, y: 0 }}
+                                transition={{ duration: 0.4, delay: index * 0.05 }}
+                                viewport={{ once: true }}
+                                className={`${service.color} rounded-2xl p-6 transition-all cursor-pointer group`}
+                                whileHover={{ y: -4 }}
                             >
-                                {/* Gradient overlay on hover */}
-                                <div className={`absolute inset-0 bg-gradient-to-br ${service.gradient} opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-3xl`}></div>
-
-                                {/* Content */}
-                                <div className="relative z-10">
-                                    <div className={`w-16 h-16 ${service.iconBg} group-hover:bg-white/20 rounded-2xl flex items-center justify-center mb-6 transition-all duration-300`}>
-                                        <IconComponent size={32} className={`${service.iconColor} group-hover:text-white transition-colors duration-300`} strokeWidth={1.5} />
+                                <div className="flex items-start gap-4">
+                                    <div className="w-12 h-12 rounded-xl flex items-center justify-center bg-white shadow-sm">
+                                        <Icon size={24} className={service.iconColor} />
                                     </div>
-
-                                    <h3 className="text-xl font-bold text-slate-800 group-hover:text-white mb-3 transition-colors duration-300">
-                                        {service.title}
-                                    </h3>
-
-                                    <p className="text-slate-500 group-hover:text-white/90 text-sm leading-relaxed mb-6 transition-colors duration-300">
-                                        {service.description}
-                                    </p>
-
-                                    <div className="flex items-center gap-2 text-sm font-medium text-slate-600 group-hover:text-white transition-colors duration-300">
-                                        <span>Saber más</span>
-                                        <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform duration-300" />
+                                    <div className="flex-1">
+                                        <h3 className="text-lg font-semibold text-slate-800 mb-1 group-hover:text-cyan-700 transition-colors">
+                                            {service.title}
+                                        </h3>
+                                        <p className="text-slate-500 text-sm">
+                                            {service.description}
+                                        </p>
                                     </div>
                                 </div>
-                            </motion.div>
+                            </motion.a>
                         );
                     })}
+                </div>
+
+                <motion.div
+                    className="text-center mt-12"
+                    initial={{ opacity: 0 }}
+                    whileInView={{ opacity: 1 }}
+                    transition={{ delay: 0.3 }}
+                    viewport={{ once: true }}
+                >
+                    <p className="text-slate-500 mb-4">¿No encuentras lo que buscas?</p>
+                    <a
+                        href="tel:+34912345678"
+                        className="inline-flex items-center gap-2 text-cyan-600 font-medium hover:text-cyan-700"
+                    >
+                        Llámanos al +34 912 345 678
+                    </a>
                 </motion.div>
             </div>
         </section>

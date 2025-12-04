@@ -1,104 +1,18 @@
-/* Global Styles */
+@import "tailwindcss";
 @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap');
 
+/* Custom properties */
 :root {
-    /* Colors */
-    --color-primary: #00A3C4;
-    /* Clean Cyan/Blue */
-    --color-secondary: #F0F4F8;
-    /* Light Grayish Blue */
-    --color-text: #334155;
-    /* Slate Gray */
-    --color-background: #FFFFFF;
-    /* White */
-    --color-accent: #64748B;
-    /* Cool Gray */
-    --color-white: #FFFFFF;
-
-    /* Typography */
+    --color-primary: #0891b2;
     --font-main: 'Outfit', sans-serif;
-
-    /* Spacing */
-    --spacing-sm: 0.5rem;
-    --spacing-md: 1rem;
-    --spacing-lg: 2rem;
-    --spacing-xl: 4rem;
-
-    /* Shadows */
-    --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
-    --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
-    --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
 }
 
-* {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-}
-
-html {
-    scroll-behavior: smooth;
-}
-
+/* Apply Outfit font globally */
 body {
     font-family: var(--font-main);
-    color: var(--color-text);
-    background-color: var(--color-background);
-    line-height: 1.6;
-    -webkit-font-smoothing: antialiased;
 }
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-    line-height: 1.2;
-    font-weight: 600;
-    color: var(--color-text);
-}
-
-a {
-    text-decoration: none;
-    color: inherit;
-    transition: color 0.2s ease;
-}
-
-button {
-    cursor: pointer;
-    font-family: inherit;
-}
-
-/* Utility Classes */
-.container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 var(--spacing-md);
-}
-
-.btn {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    padding: 0.75rem 1.5rem;
-    border-radius: 9999px;
-    font-weight: 500;
-    transition: all 0.3s ease;
-    border: none;
-}
-
-.btn-primary {
-    background-color: var(--color-primary);
-    color: var(--color-white);
-}
-
-.btn-primary:hover {
-    background-color: #008ba3;
-    transform: translateY(-1px);
-    box-shadow: var(--shadow-md);
-}
-
-.section-padding {
-    padding: var(--spacing-xl) 0;
+/* Smooth scroll */
+html {
+    scroll-behavior: smooth;
 }
