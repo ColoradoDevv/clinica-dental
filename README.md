@@ -1,43 +1,102 @@
-# Astro Starter Kit: Minimal
+# VitalDent - Clínica Dental
 
-```sh
-npm create astro@latest -- --template minimal
+Landing page profesional para clínica dental, diseñada para convertir visitantes en pacientes.
+
+![VitalDent Preview](./public/logo.svg)
+
+## 🦷 Características
+
+- **Diseño moderno y profesional** - Enfocado en familias y confianza
+- **Optimizado para conversión** - CTAs prominentes hacia WhatsApp
+- **Responsive** - Funciona en móvil, tablet y desktop
+- **Animaciones suaves** - Con Framer Motion
+- **SEO optimizado** - Meta tags y estructura semántica
+
+## 🛠️ Tecnologías
+
+- [Astro](https://astro.build/) - Framework web
+- [React](https://react.dev/) - Componentes interactivos
+- [Tailwind CSS v4](https://tailwindcss.com/) - Estilos utilitarios
+- [Framer Motion](https://www.framer.com/motion/) - Animaciones
+- [Lucide React](https://lucide.dev/) - Iconos
+
+## 🚀 Inicio Rápido
+
+```bash
+# Instalar dependencias
+npm install
+
+# Desarrollo local
+npm run dev
+
+# Construir para producción
+npm run build
+
+# Previsualizar build
+npm run preview
 ```
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+## 📁 Estructura del Proyecto
 
-## 🚀 Project Structure
-
-Inside of your Astro project, you'll see the following folders and files:
-
-```text
-/
+```
+clinica-dental/
 ├── public/
+│   ├── favicon.svg
+│   └── logo.svg
 ├── src/
-│   └── pages/
-│       └── index.astro
+│   ├── assets/images/
+│   ├── components/
+│   │   ├── Navbar.jsx
+│   │   ├── Hero.jsx
+│   │   ├── Services.jsx
+│   │   ├── Team.jsx
+│   │   ├── Testimonials.jsx
+│   │   └── Footer.jsx
+│   ├── pages/
+│   │   └── index.astro
+│   └── styles/
+│       └── global.css
 └── package.json
 ```
 
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
+## ⚙️ Configuración
 
-There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
+### WhatsApp
+Actualiza el número de teléfono en los componentes:
+```jsx
+href="https://wa.me/TU_NUMERO_AQUI"
+```
 
-Any static assets, like images, can be placed in the `public/` directory.
+### Imágenes
+Reemplaza las imágenes en `src/assets/images/`:
+- `hero-smile.jpg` - Imagen principal del hero
+- `dra-elena.png` - Foto del equipo médico
 
-## 🧞 Commands
+### Colores
+Los colores principales se pueden ajustar en `global.css`:
+```css
+:root {
+    --color-primary: #0891b2; /* Cyan */
+}
+```
 
-All commands are run from the root of the project, from a terminal:
+## 📦 Deploy
 
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
+### Vercel
+```bash
+npm run build
+# Deploy carpeta dist/
+```
 
-## 👀 Want to learn more?
+### Netlify
+Conecta el repositorio y configura:
+- Build command: `npm run build`
+- Publish directory: `dist`
 
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+## 📄 Licencia
+
+MIT License - Ver [LICENSE](./LICENSE)
+
+---
+
+Desarrollado por ColoradoDevv para VitalDent
