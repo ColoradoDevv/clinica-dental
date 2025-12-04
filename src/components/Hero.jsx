@@ -1,5 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import heroImage from '../assets/images/hero-smile.jpg';
 
 const Hero = () => {
     return (
@@ -7,11 +8,10 @@ const Hero = () => {
             {/* Background Image Overlay */}
             <div className="absolute inset-0 z-0">
                 <img
-                    src="/assets/images/hero.png"
+                    src={heroImage.src}
                     alt="Sonrisa radiante"
                     className="w-full h-full object-cover opacity-20"
                     style={{ width: '100%', height: '100%', objectFit: 'cover', opacity: 0.5 }}
-                    onError={(e) => { e.target.style.display = 'none' }} // Fallback if image missing
                 />
                 <div className="absolute inset-0 bg-gradient-to-r from-white/80 to-transparent" style={{ background: 'linear-gradient(to right, rgba(255,255,255,0.9), rgba(255,255,255,0.4))', position: 'absolute', top: 0, left: 0, right: 0, bottom: 0 }}></div>
             </div>
